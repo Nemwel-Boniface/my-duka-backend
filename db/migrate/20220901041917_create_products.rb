@@ -3,11 +3,11 @@ class CreateProducts < ActiveRecord::Migration[7.0]
     create_table :products do |t|
       t.string :image
       t.string :name
-      t.boolean :status, default: 0
+      t.integer :status, default: 0
       t.text :description
       t.integer :price
       t.integer :quantity
-      t.integer :type, default: 0
+      t.integer :product_type, default: 0
       t.integer :color, default: 0
       t.references :user, null: false, foreign_key: true
 

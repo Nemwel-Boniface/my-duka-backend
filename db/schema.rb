@@ -17,11 +17,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_01_041917) do
   create_table "products", force: :cascade do |t|
     t.string "image"
     t.string "name"
-    t.boolean "status", default: false
+    t.integer "status", default: 0
     t.text "description"
     t.integer "price"
     t.integer "quantity"
-    t.integer "type", default: 0
+    t.integer "product_type", default: 0
     t.integer "color", default: 0
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
