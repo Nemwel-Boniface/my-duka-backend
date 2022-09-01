@@ -23,8 +23,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_01_041917) do
     t.integer "quantity"
     t.integer "type", default: 0
     t.integer "color", default: 0
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_products_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -40,10 +42,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_01_041917) do
     t.datetime "confirmation_sent_at"
     t.string "unconfirmed_email"
     t.string "name"
-    t.string "nickname"
+    t.string "nickname", default: "Nicknamed"
     t.string "image"
     t.string "email"
-    t.string "role", default: "user"
+    t.string "phone"
+    t.string "location"
+    t.integer "role", default: 0
     t.json "tokens"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -53,4 +57,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_01_041917) do
     t.index ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true
   end
 
+  add_foreign_key "products", "users"
 end

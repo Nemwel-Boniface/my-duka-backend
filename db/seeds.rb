@@ -13,7 +13,7 @@ users = User.create!([
     "image": "https://avatars.githubusercontent.com/u/86318284?v=4",
     "email": "nemwelboniface@outlook.com",
     "password": "tester13",
-    "phone": "0727654351"
+    "phone": "0727654351",
     "location": "Nairobi, Kenya",
     "role": "admin"
 }
