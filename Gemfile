@@ -3,6 +3,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.0.2'
 
+# Devise token auth
+gem 'devise_token_auth', github: 'lynndylanhurley/devise_token_auth'
+
 # Rubocop for linters
 gem 'rubocop', '>= 1.0', '< 2.0'
 
