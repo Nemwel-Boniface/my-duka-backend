@@ -18,3 +18,29 @@ users = User.create!([
     "role": "admin"
 }
 ])
+
+
+products = Product.create!([
+  {
+    "image": "Shoe image",
+    "name": "High heels",
+    "description": "3-inch high heels for women.",
+    "status": "active",
+    "price": "200",
+    "quantity": "5",
+    "product_type": "shoe_wears",
+    "color": "brown",
+    "user_id": "1"
+  },
+  {
+    "image": "Shoe image two",
+    "name": "Cargo pants",
+    "description": "Stylish cargo pants unisex.",
+    "status": "archived",
+    "price": "1200",
+    "quantity": "2",
+    "product_type": "clothing",
+    "color": "black",
+    "user_id": "1"
+  },
+])
