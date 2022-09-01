@@ -5,4 +5,6 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   include DeviseTokenAuth::Concerns::User
+
+  enum :role, { buyer: 0, seller: 1, admin: 2}
 end
