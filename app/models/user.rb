@@ -14,4 +14,7 @@ class User < ActiveRecord::Base
   validates :phone, presence: true, length: { minimum: 3, maximum: 50 }
   validates :email, presence: true
   validates :location, presence: true, length: { minimum: 3, maximum: 50 }
+
+  has_many :products
+  has_many :carts, through: :products
 end

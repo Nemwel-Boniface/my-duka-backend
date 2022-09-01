@@ -9,4 +9,6 @@ class Product < ApplicationRecord
   validates :price, numericality: true, presence: true
   validates :quantity, numericality: true, presence: true
   validates :user_id, presence: true
+
+  belongs_to :user
 end
