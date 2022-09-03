@@ -30,6 +30,16 @@ class Api::V1::ProductsController < ApplicationController
     end
   end
 
+  def update
+    @product = Product.find(params[:id])
+
+    if @product.update!(products_params)
+      render json: {status: "SUCCESS", message: "Product was updated succesfully", data: @product}, status: :created
+    else
+      render json: {message: "Product cannot be found"}, status: :unprocessable_entity
+    end
+  end
+
   private
 
   def products_params
