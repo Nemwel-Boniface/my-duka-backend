@@ -20,6 +20,16 @@ class Api::V1::ProductsController < ApplicationController
     end
   end
 
+  def show
+    @product = Product.find(params[:id])
+
+    if @product
+      render json: {data: @product}, status: :ok
+    else
+      render json: {message: "Product cannot be found"}, status: :bad_request
+    end
+  end
+
   private
 
   def products_params
