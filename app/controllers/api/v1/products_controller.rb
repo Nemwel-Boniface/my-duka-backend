@@ -40,6 +40,15 @@ class Api::V1::ProductsController < ApplicationController
     end
   end
 
+  def destroy
+    @product = Product.find(params[:id])
+
+    if @product.destroy!
+      render json: {message: "Product was "}
+    else
+    end
+  end
+
   private
 
   def products_params
