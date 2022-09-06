@@ -11,4 +11,14 @@ class Product < ApplicationRecord
   validates :user_id, presence: true
 
   belongs_to :user
+
+  after_save :decrement_quantity
+
+  def decrement_quantity
+    product.decrement!(:quantity, 1)
+  end
+
+  def archived?
+    return product.status = 0 unless product.quantity.positive?
+  end
 end
